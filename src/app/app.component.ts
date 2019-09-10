@@ -7,12 +7,41 @@ import { NyTimesService } from './service/ny-times.service';
 })
 export class AppComponent implements OnInit {
   title = 'ny-times';
-  topStories;
+  topStories = [];
+  groupedTopStoriesBySection = {};
 
   constructor(private nyTimesService: NyTimesService) {}
 
-  ngOnInit(): void {
-    this.nyTimesService.getHomeTopStories().subscribe(data => (this.topStories = data));
-    console.log(this.topStories);
+  async ngOnInit() {
+    await this.getTopStories();
+    this.groupedTopStoriesBySection = this.groupTopStoriesBySection(this.topStories);
+  }
+
+  async getTopStories() {
+    let res: any;
+    await this.nyTimesService
+      .getHomeTopStories()
+      .then(data => {
+        res = data;
+        this.topStories = res.results;
+      })
+      .catch(error => console.log(error));
+  }
+
+  groupTopStoriesBySection(topStories) {
+    const sectionArray = [];
+    const storiesBySection = {};
+
+    for (const story of topStories) {
+      if (!sectionArray.includes(story.section)) {
+        sectionArray.push(story.section);
+      }
+    }
+
+    for (const section of sectionArray) {
+      storiesBySection[section] = topStories.filter(el => el.section === section);
+    }
+
+    return storiesBySection;
   }
 }

@@ -4,11 +4,11 @@ import { apiKey } from './credentials'; // gitignored.
 
 @Injectable()
 export class NyTimesService {
-  private url = 'https://api.nytimes.com/svc/topstories/v2/home.json?api-key=';
+  private url = 'https://api.nytimes.com/svc/topstories/v2/home.json';
 
   constructor(private http: HttpClient) {}
 
-  getHomeTopStories() {
-    return this.http.get(`${this.url}/${apiKey}`);
+  async getHomeTopStories() {
+    return await this.http.get(`${this.url}?api-key=${apiKey}`).toPromise();
   }
 }
