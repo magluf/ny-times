@@ -4,12 +4,5 @@
 @import './assets/styles/_wrapper.css';
 @import './assets/styles/_home.css';
 @import './assets/styles/_button.css';
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.ny-times-logo {
-  width: 200px;
-}
+@import './assets/styles/_accordion.css';
+@import './assets/styles/_stories.css';

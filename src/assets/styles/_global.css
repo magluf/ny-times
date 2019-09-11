@@ -3,6 +3,10 @@ img {
   height: auto;
 }
 
+.ny-times-logo {
+  width: 200px;
+}
+
 * {
   box-sizing: border-box;
 }

@@ -34,20 +34,36 @@
   box-shadow: 5px 5px rgba(0, 0, 0, 0.4);
 }
 
+.center {
+  text-align: center;
+}
+
 @media screen and (min-width: 760px) {
-  .button:hover span {
+  .button.go:hover span {
     padding-right: 25px;
   }
 
-  .button span {
+  .button.back:hover span {
+    padding: 0px 0px 0px 25px;
+  }
+
+  .button.go span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
   }
 
-  .button span:after {
+  .button.back span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button.go span:after {
     content: '\00bb';
+    padding: 0px 0px 0px 25px;
     margin-top: 0.5rem;
     position: absolute;
     opacity: 0;
@@ -56,8 +72,24 @@
     transition: 0.5s;
   }
 
-  .button:hover span {
-    padding-right: 25px;
+  .button.back span:after {
+    content: '\00ab';
+    margin-top: 0.5rem;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -30px;
+    transition: 0.5s;
+  }
+
+  .button.go:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .button.back:hover span:after {
+    opacity: 1;
+    left: 0;
   }
 }
 
@@ -66,19 +98,9 @@
   transition: 0.1s;
 }
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-
 .button:active {
   transform: translateY(2px);
-  transition: 0.05s;
+  transition: 0.02s;
   background-color: #505050;
   box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
 }

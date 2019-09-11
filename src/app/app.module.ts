@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { NyTimesService } from './service/ny-times.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { HomeComponent } from './home/home.component';
+import { TopStoriesComponent } from './top-stories/top-stories.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent, TopStoriesComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, AngularSvgIconModule],
   providers: [NyTimesService],
   bootstrap: [AppComponent]
