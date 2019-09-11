@@ -34,21 +34,31 @@
   box-shadow: 5px 5px rgba(0, 0, 0, 0.4);
 }
 
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
+@media screen and (min-width: 760px) {
+  .button:hover span {
+    padding-right: 25px;
+  }
 
-.button span:after {
-  content: '\00bb';
-  margin-top: 0.5rem;
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -30px;
-  transition: 0.5s;
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: '\00bb';
+    margin-top: 0.5rem;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -30px;
+    transition: 0.5s;
+  }
+
+  .button:hover span {
+    padding-right: 25px;
+  }
 }
 
 .button:focus {
@@ -56,15 +66,16 @@
   transition: 0.1s;
 }
 
-.button:active {
-  transform: translateY(2px);
-  transition: 0.1s;
-  background-color: #505050;
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
-.button:hover span {
-  padding-right: 25px;
+.button:active {
+  transform: translateY(2px);
+  transition: 0.05s;
+  background-color: #505050;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
 }
 
 .button:hover span:after {
