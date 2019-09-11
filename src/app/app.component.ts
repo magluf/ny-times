@@ -8,17 +8,19 @@ import { NyTimesService } from './service/ny-times.service';
 export class AppComponent implements OnInit {
   title = 'ny-times';
   topStories = [];
-  groupedTopStoriesBySection = {};
+  topStoriesBySection = {};
 
   constructor(private nyTimesService: NyTimesService) {}
 
   async ngOnInit() {
     await this.getTopStories();
-    this.groupedTopStoriesBySection = this.groupTopStoriesBySection(this.topStories);
+    this.topStoriesBySection = this.groupTopStoriesBySection(this.topStories);
+    console.log(this.topStoriesBySection);
   }
 
   async getTopStories() {
     let res: any;
+
     await this.nyTimesService
       .getHomeTopStories()
       .then(data => {
