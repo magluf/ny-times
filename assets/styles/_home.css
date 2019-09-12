@@ -1,0 +1,15 @@
+.headline {
+  font-family: var(--mainFont);
+  margin-top: auto;
+}
+
+.headline.top {
+  font-weight: 400;
+  font-size: 2.8rem;
+}
+
+.headline.stories {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-left: -3px;
+}
