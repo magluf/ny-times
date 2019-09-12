@@ -5,7 +5,7 @@
         <button class="accordion" (click)="toggleAccordian($event, i)">{{ stories[0].section }}</button>
         <div class="panel" hide="!stories.isActive">
           <div class="stories-titles" *ngFor="let story of stories">
-            <p>{{ story.title }}</p>
+            <span>{{ story.title }}</span>
           </div>
         </div>
       </div>

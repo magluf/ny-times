@@ -15,7 +15,37 @@
 .stories-titles {
   text-align: left;
   font-family: var(--mainFont);
-  font-size: 1.2rem;
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+
+.stories-titles span {
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.stories-titles:hover span {
+  padding-left: 25px;
+}
+
+.stories-titles span:after {
+  content: '\00bb';
+  color: black;
+  margin-top: 1rem;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -30px;
+  transition: 0.5s;
+}
+
+.stories-titles:hover span:after {
+  opacity: 1;
+  left: 0;
 }
 
 .frame {
