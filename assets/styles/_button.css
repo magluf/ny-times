@@ -93,6 +93,10 @@
   }
 }
 
+.button-m-top {
+  padding-top: 1rem;
+}
+
 .button:focus {
   outline: none !important;
   transition: 0.1s;
