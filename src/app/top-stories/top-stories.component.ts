@@ -7,24 +7,13 @@ import { Router } from '@angular/router';
   templateUrl: './top-stories.component.html'
 })
 export class TopStoriesComponent implements OnInit {
-  topStories = [];
   topStoriesBySection = [];
 
-  constructor(private nyTimesService: NyTimesService, private router: Router) {}
+  constructor(private router: Router) {}
 
   async ngOnInit() {
-    await this.getTopStories();
-    this.topStoriesBySection = this.groupTopStoriesBySection(this.topStories);
+    this.topStoriesBySection = JSON.parse(localStorage.getItem('topStoriesBySection'));
     console.log(this.topStoriesBySection);
-    this.testingTopStoriesArray();
-  }
-
-  testingTopStoriesArray() {
-    for (const stories of this.topStoriesBySection) {
-      for (const story of stories) {
-        console.log(story);
-      }
-    }
   }
 
   toggleAccordian(event, index) {
@@ -41,35 +30,6 @@ export class TopStoriesComponent implements OnInit {
     } else {
       panel.style.maxHeight = panel.scrollHeight + 'px';
     }
-  }
-
-  async getTopStories() {
-    let res: any;
-
-    await this.nyTimesService
-      .getHomeTopStories()
-      .then(data => {
-        res = data;
-        this.topStories = res.results;
-      })
-      .catch(error => console.log(error));
-  }
-
-  groupTopStoriesBySection(topStories) {
-    const sectionArray = [];
-    const storiesBySection = [];
-
-    for (const story of topStories) {
-      if (!sectionArray.includes(story.section)) {
-        sectionArray.push(story.section);
-      }
-    }
-
-    for (const section of sectionArray) {
-      storiesBySection.push(topStories.filter(el => el.section === section));
-    }
-
-    return storiesBySection;
   }
 
   goToHome() {

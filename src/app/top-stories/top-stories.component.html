@@ -1,18 +1,19 @@
-<div class="stories-container">
-  <div *ngFor="let stories of topStoriesBySection; let i = index">
-    <button class="accordion" (click)="toggleAccordian($event, i)">{{ stories[0].section }}</button>
-    <div class="panel" hide="!stories.isActive">
-      <div *ngFor="let story of stories">
-        <p>{{ story.title }}</p>
+<div class="stories-wrapper">
+  <div class="frame">
+    <div class="stories-container black-scrollbar">
+      <div *ngFor="let stories of topStoriesBySection; let i = index">
+        <button class="accordion" (click)="toggleAccordian($event, i)">{{ stories[0].section }}</button>
+        <div class="panel" hide="!stories.isActive">
+          <div class="stories-titles" *ngFor="let story of stories">
+            <p>{{ story.title }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<br /><br /><br />
-
-<div class="center">
-  <button (click)="goToHome()" class="button back">
-    <span><strong class="headline top">back</strong></span>
-  </button>
+  <div class="button-m-top">
+    <button (click)="goToHome()" class="button back">
+      <span><strong class="headline top">back</strong></span>
+    </button>
+  </div>
 </div>
