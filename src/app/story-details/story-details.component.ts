@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 
@@ -14,6 +14,15 @@ export class StoryDetailsComponent implements OnInit {
     this.story = JSON.parse(localStorage.getItem('topStoriesBySection'))[this.route.snapshot.params.sectionIndex][
       this.route.snapshot.params.storyIndex
     ];
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    console.log(window.innerWidth);
+  }
+
+  isMobile() {
+    return window.innerWidth <= 800;
   }
 
   goToTopStories() {

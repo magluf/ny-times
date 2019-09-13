@@ -1,20 +1,25 @@
-.ny-logo-svg-sizing {
+.ny-logo {
   width: 20rem;
   height: 20rem;
 }
 
-.ny-headline-svg-sizing {
+.ny-headline {
   width: 17rem;
   height: 3.4rem;
 }
 
+.ny-mob-headline {
+  width: 14rem;
+  height: 7rem;
+}
+
 @media screen and (min-width: 800px) {
-  .ny-logo-svg-sizing {
+  .ny-logo {
     width: 10rem;
     height: 10rem;
   }
 
-  .ny-headline-svg-sizing {
+  .ny-headline {
     width: 30rem;
     height: 6rem;
   }
