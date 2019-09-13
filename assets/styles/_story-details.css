@@ -1,0 +1,7 @@
+.story-details-ny-title {
+  width: 30rem;
+}
+
+.story-details h1 {
+  font-family: var(--storyFont);
+}
