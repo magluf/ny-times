@@ -17,10 +17,6 @@
     width: 50%;
   }
 
-  .row {
-    text-align: left;
-  }
-
   .row.col-md-4 {
     float: left;
     width: 33.33%;
@@ -47,6 +43,14 @@
 
   .row.gutters div:last-child {
     padding-right: 0px;
+  }
+
+  .row.left {
+    text-align: left;
+  }
+
+  .row.right {
+    text-align: right;
   }
 }
 
