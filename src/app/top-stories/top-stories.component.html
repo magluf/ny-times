@@ -4,8 +4,8 @@
       <div *ngFor="let stories of topStoriesBySection; let i = index">
         <button class="accordion" (click)="toggleAccordian($event, i)">{{ stories[0].section }}</button>
         <div class="panel" hide="!stories.isActive">
-          <div class="stories-titles" *ngFor="let story of stories">
-            <span>{{ story.title }}</span>
+          <div class="stories-titles" *ngFor="let story of stories; let j = index">
+            <span (click)="showStory(story.section, i, j)">{{ story.title }}</span>
           </div>
         </div>
       </div>

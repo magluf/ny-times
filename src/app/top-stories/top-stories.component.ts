@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { NyTimesService } from '../service/ny-times.service';
 import { Router } from '@angular/router';
 
@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class TopStoriesComponent implements OnInit {
   topStoriesBySection = [];
+
+  @ViewChild('topStoriesPanel', { static: false }) private topStoriesPanel: ElementRef;
 
   constructor(private router: Router) {}
 
@@ -30,6 +32,12 @@ export class TopStoriesComponent implements OnInit {
     } else {
       panel.style.maxHeight = panel.scrollHeight + 'px';
     }
+  }
+
+  showStory(section, i, j) {
+    section = section.replace(/\s+/g, '-').toLowerCase();
+    section = section.replace(/\./g, '');
+    this.router.navigate(['story-details', section, i, j]);
   }
 
   goToHome() {

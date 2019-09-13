@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TopStoriesComponent } from './top-stories/top-stories.component';
 import { HomeComponent } from './home/home.component';
+import { StoryDetailsComponent } from './story-details/story-details.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'top-stories',
     component: TopStoriesComponent
+  },
+  {
+    path: 'story-details/:section/:sectionIndex/:storyIndex',
+    component: StoryDetailsComponent
   }
 ];
 

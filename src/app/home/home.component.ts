@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   topStories;
   topStoriesBySection;
+
+  svgLoaded = false;
   constructor(private router: Router, private nyTimesService: NyTimesService) {}
 
   async ngOnInit(): Promise<any> {
@@ -19,6 +21,12 @@ export class HomeComponent implements OnInit {
 
   goToTopStories() {
     this.router.navigate(['top-stories']);
+  }
+
+  checkSvgLoaded() {
+    console.log(this.svgLoaded);
+    this.svgLoaded = true;
+    console.log(this.svgLoaded);
   }
 
   async getTopStories() {

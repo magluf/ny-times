@@ -10,9 +10,10 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HomeComponent } from './home/home.component';
 import { TopStoriesComponent } from './top-stories/top-stories.component';
 import { StoryDetailsComponent } from './story-details/story-details.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, TopStoriesComponent, StoryDetailsComponent],
+  declarations: [AppComponent, HomeComponent, TopStoriesComponent, StoryDetailsComponent, LoadingComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, AngularSvgIconModule, BrowserAnimationsModule],
   providers: [NyTimesService],
   bootstrap: [AppComponent]

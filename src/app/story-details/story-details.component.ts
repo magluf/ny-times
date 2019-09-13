@@ -1,11 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-story-details',
   templateUrl: './story-details.component.html'
 })
 export class StoryDetailsComponent implements OnInit {
-  constructor() {}
+  story;
+  constructor(@Inject(DOCUMENT) private document: Document, private router: Router, private route: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.story = JSON.parse(localStorage.getItem('topStoriesBySection'))[this.route.snapshot.params.sectionIndex][
+      this.route.snapshot.params.storyIndex
+    ];
+  }
+
+  goToTopStories() {
+    this.router.navigate(['top-stories']);
+  }
+
+  goToStory(url) {
+    window.open(url, '_blank');
+  }
 }

@@ -3,6 +3,12 @@
   src: url('../fonts/simplifica.ttf');
 }
 
+@font-face {
+  font-family: Cheltenham;
+  src: url('../fonts/cheltenham.ttf');
+}
+
 :root {
   --mainFont: Simplifica;
+  --storyFont: Cheltenham;
 }
