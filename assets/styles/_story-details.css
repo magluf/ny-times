@@ -5,3 +5,15 @@
 .story-details h1 {
   font-family: var(--storyFont);
 }
+
+.svg-sizing {
+  width: 15rem;
+  height: 15rem;
+}
+
+@media screen and (min-width: 800px) {
+  .svg-sizing {
+    width: 15rem;
+    height: 15rem;
+  }
+}
