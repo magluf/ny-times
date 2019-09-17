@@ -34,7 +34,7 @@ export class TopStoriesComponent implements OnInit {
     }
   }
 
-  showStory(section, i, j) {
+  goToStoryDetails(section, i, j) {
     section = section.replace(/\s+/g, '-').toLowerCase();
     section = section.replace(/\./g, '');
     this.router.navigate(['story-details', section, i, j]);

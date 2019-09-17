@@ -11,9 +11,10 @@ import { HomeComponent } from './home/home.component';
 import { TopStoriesComponent } from './top-stories/top-stories.component';
 import { StoryDetailsComponent } from './story-details/story-details.component';
 import { LoadingComponent } from './loading/loading.component';
+import { LeavingComponent } from './leaving/leaving.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, TopStoriesComponent, StoryDetailsComponent, LoadingComponent],
+  declarations: [AppComponent, HomeComponent, TopStoriesComponent, StoryDetailsComponent, LoadingComponent, LeavingComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, AngularSvgIconModule, BrowserAnimationsModule],
   providers: [NyTimesService],
   bootstrap: [AppComponent]

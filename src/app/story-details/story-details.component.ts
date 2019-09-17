@@ -8,17 +8,12 @@ import { DOCUMENT } from '@angular/common';
 })
 export class StoryDetailsComponent implements OnInit {
   story;
-  constructor(@Inject(DOCUMENT) private document: Document, private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.story = JSON.parse(localStorage.getItem('topStoriesBySection'))[this.route.snapshot.params.sectionIndex][
       this.route.snapshot.params.storyIndex
     ];
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    console.log(window.innerWidth);
   }
 
   isMobile() {
@@ -29,7 +24,12 @@ export class StoryDetailsComponent implements OnInit {
     this.router.navigate(['top-stories']);
   }
 
-  goToStory(url) {
-    window.open(url, '_blank');
+  goToLeaving() {
+    this.router.navigate([
+      'leaving',
+      this.route.snapshot.params.section,
+      this.route.snapshot.params.sectionIndex,
+      this.route.snapshot.params.storyIndex
+    ]);
   }
 }
