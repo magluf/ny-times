@@ -7,9 +7,20 @@ img {
   width: 200px;
 }
 
-/* body {
-  margin: 0;
-} */
+h1 {
+  font-family: var(--mainFont);
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: -0.5rem;
+}
+
+h2 {
+  font-family: var(--storyFont);
+}
+
+h3 {
+  font-family: var(--storyFont);
+}
 
 * {
   box-sizing: border-box;

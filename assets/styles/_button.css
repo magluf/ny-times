@@ -97,6 +97,10 @@
   padding-top: 1rem;
 }
 
+.button-lg-m-top {
+  padding-top: 10rem;
+}
+
 .button:focus {
   outline: none !important;
   transition: 0.1s;
