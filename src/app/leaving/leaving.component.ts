@@ -29,6 +29,9 @@ export class LeavingComponent implements OnInit {
   }
 
   goToStory(url) {
-    window.open(url, '_blank');
+    const newWindow = window.open('', this.story.title, 'width=800,height=600,menubar=0,toolbar=0');
+    newWindow.document.write('loading story... ');
+
+    newWindow.location.href = url;
   }
 }
