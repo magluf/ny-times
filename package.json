@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "deploy-ghp": "ng deploy --base-href https://magluf.github.io/ny-times/",
     "build-dev-image": "docker build -f docker/dev.Dockerfile -t ny-times:dev .",
     "build-prod-image": "docker build -f docker/prod.Dockerfile -t ny-times:prod .",
     "build-docker-images": "docker build -f docker/dev.Dockerfile -t ny-times:dev . && docker build -f docker/prod.Dockerfile -t ny-times:prod ."

@@ -3,7 +3,9 @@
   <div class="frame">
     <div class="stories-container black-scrollbar">
       <div *ngFor="let stories of topStoriesBySection; let i = index">
-        <button class="accordion" (click)="toggleAccordian($event, i)">{{ stories[0].section }}</button>
+        <button class="accordion" (click)="toggleAccordian($event, i)">
+          {{ stories[0].section }}
+        </button>
         <div class="panel" hide="!stories.isActive">
           <div class="stories-titles" *ngFor="let story of stories; let j = index">
             <span (click)="goToStoryDetails(story.section, i, j)">{{ story.title }}</span>
@@ -12,6 +14,7 @@
       </div>
     </div>
   </div>
+  <p class="tip">click stories titles to see more details</p>
   <div class="button-m-top">
     <button (click)="goToHome()" class="button back">
       <span><strong class="headline top">back</strong></span>
