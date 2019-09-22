@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LeavingComponent implements OnInit {
   story;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.story = JSON.parse(localStorage.getItem('topStoriesBySection'))[this.route.snapshot.params.sectionIndex][
@@ -29,9 +29,6 @@ export class LeavingComponent implements OnInit {
   }
 
   goToStory(url) {
-    const newWindow = window.open('', this.story.title, 'width=800,height=600,menubar=0,toolbar=0');
-    newWindow.document.write('loading story... ');
-
-    newWindow.location.href = url;
+    window.open(url, '_blank');
   }
 }

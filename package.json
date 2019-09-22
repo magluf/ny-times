@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-dev-image": "docker build -f docker/dev.Dockerfile -t ny-times:dev .",
+    "build-prod-image": "docker build -f docker/prod.Dockerfile -t ny-times:prod .",
+    "build-docker-images": "docker build -f docker/dev.Dockerfile -t ny-times:dev . && docker build -f docker/prod.Dockerfile -t ny-times:prod ."
   },
   "private": true,
   "dependencies": {

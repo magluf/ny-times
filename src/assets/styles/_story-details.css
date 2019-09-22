@@ -6,6 +6,10 @@
   font-family: var(--storyFont);
 }
 
+.story-details p {
+  font-family: var(--storyFont);
+}
+
 .story-details-container {
   /* border: 2px solid blue; */
   padding-left: 18px;
