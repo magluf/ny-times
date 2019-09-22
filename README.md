@@ -3,7 +3,7 @@
 App to view Ny Times' top stories.
 Done without CSS frameworks for responsive layout studying.
 
-# Docker Scripts
+## Docker Scripts
 
 Build development environment Docker image:
 
